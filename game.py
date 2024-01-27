@@ -60,7 +60,7 @@ class Map:
                 if 0 <= nx < self.size and 0 <= ny < self.size:
                     if not self.grid[nx][ny].is_opened:
                         mine_count = self.get_mine_count(nx, ny)
-                        if mine_count <= 2: 
+                        if mine_count <= 5: 
                             self.move(nx, ny, False, deep + 1)
         return 2
 
@@ -106,5 +106,5 @@ class Game:
             else:
                 self.map.draw()
 
-game = Game(16, 60)
+game = Game(16, 65)
 game.play()
